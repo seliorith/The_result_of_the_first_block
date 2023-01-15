@@ -9,9 +9,7 @@
 
 void Print(string[] arr)
 {
-    int size = arr.Length;
-
-    for (int i = 0; i < size; i++)
+    for (int i = 0; i < arr.Length; i++)
     {
         Console.Write($"{arr[i]} ");
     }
@@ -20,13 +18,16 @@ void Print(string[] arr)
 
 string[] SecondArr(string[] arr)
 {
-    int size = arr.Length;
-    string[] new_arr = new string[size];
+    string[] new_arr = new string[arr.Length];
+    int j = 0;
 
-    for (int i = 0; i < size; i++)
+    for (int i = 0; i < arr.Length; i++)
     {
         if (arr[i].Length <= 3)
-            new_arr[i] = arr[i];
+        {
+            new_arr[j] = arr[i];
+            j++;
+        }
     }
     return new_arr;
 }
@@ -48,4 +49,3 @@ Print(arr_3);
 string[] arr_3_new = SecondArr(arr_3);
 Print(arr_3_new);
 Console.WriteLine();
-
